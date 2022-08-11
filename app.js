@@ -30,5 +30,5 @@ if (process.env.NODE_ENV === "production") {
 //connect db, start server
 const dbURI = process.env.MONGO_URI;
 mongoose.connect(dbURI)
-    .then((result) => app.listen(port))
+    .then((result) => { app.listen(port); console.log("server started at port" + port) })
     .catch((err) => console.log(err));
