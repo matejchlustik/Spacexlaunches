@@ -11,7 +11,7 @@ const useAuth = () => {
         async function fetchAuth(abortCont) {
             if (user) {
                 try {
-                    const res = await fetch("http://localhost:8000/auth", {
+                    const res = await fetch("/auth", {
                         method: "POST",
                         credentials: 'include',
                         signal: abortCont.signal

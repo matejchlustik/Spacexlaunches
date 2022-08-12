@@ -16,7 +16,7 @@ const Signup = () => {
         setErrors({});
         const payload = { username, email, password };
         try {
-            const res = await fetch("http://localhost:8000/signup", {
+            const res = await fetch("/signup", {
                 method: "POST",
                 credentials: 'include',
                 body: JSON.stringify(payload),

@@ -4,7 +4,7 @@ import { UserContext } from "./UserContext";
 
 const CommentSection = ({ post_id }) => {
 
-    const { data: comments, isPending, error } = useFetch("http://localhost:8000/comment/" + post_id);
+    const { data: comments, isPending, error } = useFetch("/comment/" + post_id);
     const [content, setContent] = useState("");
     const { user } = useContext(UserContext);
 
@@ -23,7 +23,7 @@ const CommentSection = ({ post_id }) => {
     const handleClick = async () => {
         const payload = { content, user, post_id }
         try {
-            const res = await fetch("http://localhost:8000/comment", {
+            const res = await fetch("/comment", {
                 method: "POST",
                 credentials: 'include',
                 body: JSON.stringify(payload),
